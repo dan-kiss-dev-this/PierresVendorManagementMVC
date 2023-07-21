@@ -8,6 +8,23 @@ namespace VendorManager.Models
 
         public string Description { get; set; }
 
-        public static List<object> Orders = new List<object> { };
+        public int Id { get; }
+
+        public List<object> Orders = new List<object> { };
+
+        public static List<Vendor> _instances = new List<Vendor> { };
+
+        public Vendor(string name, string description)
+        {
+            Name = name;
+            Description = description;
+            _instances.Add(this);
+            Id = _instances.Count;
+        }
+
+        public static void ClearAll()
+        {
+            _instances.Clear();
+        }
     }
 }
