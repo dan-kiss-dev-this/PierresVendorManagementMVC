@@ -84,5 +84,15 @@ namespace VendorManager.Tests
             List<Order> expectedValues = new List<Order> { newOrder };
             CollectionAssert.AreEqual(expectedValues, newVendor.Orders);
         }
+
+        [TestMethod]
+        public void Find_FindAVendor_Vendor()
+        {
+            string vendorName = "Pepsi";
+            string vendorDescription = "Beverage Manufacturer";
+            Vendor newVendor = new Vendor(vendorName, vendorDescription);
+            Vendor foundVendor = Vendor.Find(newVendor.Id);
+            Assert.AreEqual(newVendor, foundVendor);
+        }
     }
 }
