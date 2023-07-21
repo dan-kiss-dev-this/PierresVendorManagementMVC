@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
+using VendorManager.Models;
 
 namespace VendorManager.Controllers
 {
@@ -10,6 +11,13 @@ namespace VendorManager.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet("/vendors")]
+        public ActionResult Vendors()
+        {
+            List<Vendor> allVendors = Vendor.GetAll();
+            return View(allVendors);
         }
     }
 }
