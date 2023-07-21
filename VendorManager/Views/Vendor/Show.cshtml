@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show</title>
+</head>
+
+<body>
+    @using VendorManager.Models
+    <h2>Vendor Info</h2>
+    <h3>Vendor Name: @Model.Name</h3>
+    <h3>Vendor Description: @Model.Description</h3>
+    <h3>Orders from Vendor</h3>
+    @foreach (Order order in @Model.Orders)
+    {
+        <p>@order.Title</p>
+    }
+    <h3>
+        <a href="/vendors/@Model.Id/orders/new">
+            Add New Order
+        </a>
+    </h3>
+
+</body>
+
+</html>

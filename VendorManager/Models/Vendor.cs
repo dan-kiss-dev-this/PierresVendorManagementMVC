@@ -36,5 +36,11 @@ namespace VendorManager.Models
         {
             Orders.Add(newOrder);
         }
+
+        public static Vendor Find(int id)
+        {
+            Vendor foundVendor = Vendor._instances[id - 1];
+            return foundVendor;
+        }
     }
 }
