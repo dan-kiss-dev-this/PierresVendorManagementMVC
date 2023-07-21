@@ -63,5 +63,26 @@ namespace VendorManager.Tests
             List<Vendor> expectedValues = new List<Vendor> { newVendor, newVendor2 };
             CollectionAssert.AreEqual(expectedValues, Vendor.GetAll());
         }
+
+        [TestMethod]
+        public void AddOrder_AddAnOrderToAVendor_ListOfOrders()
+        {
+            //arrange
+            string vendorName = "Pepsi";
+            string vendorDescription = "Beverage Manufacturer";
+            Vendor newVendor = new Vendor(vendorName, vendorDescription);
+
+            string title = "Order for Amy";
+            string description = "Dozen cookies";
+            int price = 10;
+            Order newOrder = new Order(title, description, price);
+
+            //act
+            newVendor.AddOrder(newOrder);
+
+            //assert
+            List<Order> expectedValues = new List<Order> { newOrder };
+            CollectionAssert.AreEqual(expectedValues, newVendor.Orders);
+        }
     }
 }

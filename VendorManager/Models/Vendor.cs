@@ -10,7 +10,7 @@ namespace VendorManager.Models
 
         public int Id { get; }
 
-        public List<object> Orders = new List<object> { };
+        public List<Order> Orders = new List<Order> { };
 
         public static List<Vendor> _instances = new List<Vendor> { };
 
@@ -30,6 +30,11 @@ namespace VendorManager.Models
         public static List<Vendor> GetAll()
         {
             return _instances;
+        }
+
+        public void AddOrder(Order newOrder)
+        {
+            Orders.Add(newOrder);
         }
     }
 }
