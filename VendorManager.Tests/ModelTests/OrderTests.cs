@@ -73,5 +73,16 @@ namespace OrderManager.Tests
             List<Order> expectedValues = new List<Order> { newOrder, newOrder2 };
             CollectionAssert.AreEqual(expectedValues, Order.GetAll());
         }
+
+        [TestMethod]
+        public void Find_FindAnOrder_Order()
+        {
+            string title = "Order for Amy";
+            string description = "Dozen cookies";
+            int price = 10;
+            Order newOrder = new Order(title, description, price);
+            Order foundOrder = Order.Find(newOrder.Id);
+            Assert.AreEqual(newOrder, foundOrder);
+        }
     }
 }
