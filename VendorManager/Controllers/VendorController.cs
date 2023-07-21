@@ -39,5 +39,14 @@ namespace VendorManager.Controllers
             Vendor foundVendor = Vendor.Find(vendorId);
             return View(foundVendor);
         }
+
+        [HttpPost("/vendors/{vendorId}/orders")]
+        public ActionResult Create(int vendorId, string orderName, string orderDescription, int price)
+        {
+            Vendor foundVendor = Vendor.Find(vendorId);
+            Order newOrder = new Order(orderName, orderDescription, price);
+            foundVendor.AddOrder(newOrder);
+            return View("Show", foundVendor);
+        }
     }
 }
