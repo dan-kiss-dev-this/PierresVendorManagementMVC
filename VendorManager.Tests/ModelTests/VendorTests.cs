@@ -30,6 +30,15 @@ namespace VendorManager.Tests
         }
 
         [TestMethod]
+        public void GetDescription_CanReturnDescription_String()
+        {
+            string vendorName = "Pepsi";
+            string vendorDescription = "Beverage Manufacturer";
+            Vendor newVendor = new Vendor(vendorName, vendorDescription);
+            Assert.AreEqual(vendorDescription, newVendor.Description);
+        }
+
+        [TestMethod]
         public void GetId_CanReturnId_Int()
         {
             string vendorName = "Pepsi";
@@ -40,6 +49,19 @@ namespace VendorManager.Tests
             Vendor newVendor2 = new Vendor(vendorName2, vendorDescription2);
             int expectedId = 2;
             Assert.AreEqual(expectedId, newVendor2.Id);
+        }
+
+        [TestMethod]
+        public void GetAll_CanReturnListOfAll_ListOfVendors()
+        {
+            string vendorName = "Pepsi";
+            string vendorDescription = "Beverage Manufacturer";
+            string vendorName2 = "Whole Foods";
+            string vendorDescription2 = "Specialty grocery chain";
+            Vendor newVendor = new Vendor(vendorName, vendorDescription);
+            Vendor newVendor2 = new Vendor(vendorName2, vendorDescription2);
+            List<Vendor> expectedValues = new List<Vendor> { newVendor, newVendor2 };
+            CollectionAssert.AreEqual(expectedValues, Vendor.GetAll());
         }
     }
 }
