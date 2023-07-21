@@ -14,7 +14,11 @@
     <h3>Orders from Vendor</h3>
     @foreach (Order order in @Model.Orders)
     {
-        <p>@order.Title</p>
+        <p>
+            <a href='/vendors/@Model.Id/orders/@order.Id'>
+                @order.Title
+            </a>
+        </p>
     }
     <h3>
         <a href="/vendors/@Model.Id/orders/new">
