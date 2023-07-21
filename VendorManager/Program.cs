@@ -15,6 +15,8 @@ namespace VendorManager
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
 
             app.MapControllerRoute(
