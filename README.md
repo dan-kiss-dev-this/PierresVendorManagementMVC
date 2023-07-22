@@ -2,7 +2,7 @@
 
 #### By _**{Dan Kiss}**_
 
-![ Vendor Management MVC](./)
+![Bakery Vendor Management MVC](./VendorManager/wwwroot/img/bakeryVendorManagementScreenshot.png)
 #### _{Pierre's Vendor Management MVC is an ASP.NET Core MVC app written in C# where the user will add Vendors and once a the Vendor is made Order can be added to each Vendor.}_
 
 ## Technologies Used
