@@ -10,6 +10,8 @@
 * ASP.NET Core MVC
 * .NET Core
 * C#
+* Razor
+* CSS
 * MS Test (Microsoft)
 
 ## Description
